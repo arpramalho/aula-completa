@@ -13,5 +13,5 @@ export const getStripeJs = () => {
 export const getStripeServer = () => {
   const sk = process.env.STRIPE_SECRET_KEY;
   if (!sk) throw new Error("STRIPE_SECRET_KEY não configurada");
-  return new Stripe(sk, { apiVersion: "2024-06-20" });
+  return new Stripe(sk, { apiVersion: "2023-10-16" });
 };
