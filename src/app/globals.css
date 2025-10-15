@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tipografia base e suavização */
+html,
+body {
+  @apply bg-white text-neutral-800 antialiased;
+}
+
+/* Scroll suave com fallback para usuários que preferem menos movimento */
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  /* Desativa transições visuais para evitar movimento excessivo */
+  .card {
+    transition: none;
+  }
+  .btn {
+    transition: none;
+  }
+  button {
+    transition: none;
+  }
+}
+
+/* Links e foco acessível */
+a {
+  @apply text-primary-600 hover:text-primary-700 transition-colors;
+}
+
+:focus-visible {
+  outline: 2px solid theme("colors.primary.500");
+  outline-offset: 2px;
+}
+
+/* Alto contraste: usa cores do sistema para foco visível */
+@media (forced-colors: active) {
+  :focus-visible {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+  }
+  .btn:focus-visible {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+  }
+  .link-on-dark:focus-visible {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+  }
+  /* Tornar cartões e botões outline legíveis em alto contraste */
+  .card {
+    background: Canvas;
+    color: CanvasText;
+    border: 1px solid CanvasText;
+  }
+  .btn-outline {
+    background: ButtonFace;
+    color: ButtonText;
+    border: 1px solid ButtonText;
+  }
+  .btn-primary {
+    background: Highlight;
+    color: HighlightText;
+    border: 1px solid HighlightText;
+  }
+  .btn-accent {
+    background: Highlight;
+    color: HighlightText;
+    border: 1px solid HighlightText;
+  }
+  .icon {
+    background: ButtonFace;
+    color: ButtonText;
+    border: 1px solid ButtonText;
+  }
+  /* Form controls e buttons genéricos em alto contraste */
+  input,
+  textarea,
+  select {
+    background: Field;
+    color: FieldText;
+    border: 1px solid FieldText;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: GrayText;
+  }
+  button {
+    background: ButtonFace;
+    color: ButtonText;
+    border: 1px solid ButtonText;
+  }
+}
+
+/* Scrollbar suave */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: theme("colors.neutral.100");
+}
+*::-webkit-scrollbar-thumb {
+  background: theme("colors.neutral.300");
+  border-radius: 8px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: theme("colors.neutral.400");
+}
+
+/* Containers e cartões */
+.container {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.card {
+  @apply rounded-xl bg-white shadow-soft ring-1 ring-neutral-200 transition-shadow hover:shadow-lg;
+}
+
+/* Margem de rolagem para âncoras: evita sobreposição pelo header sticky */
+main > section {
+  scroll-margin-top: 5rem;
+}
+
+/* Botões base */
+.btn {
+  @apply inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-info-500 focus-visible:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed;
+}
+.btn-primary {
+  @apply bg-primary-600 text-white hover:bg-primary-700;
+}
+.btn-accent {
+  @apply bg-accent-600 text-white hover:bg-accent-700;
+}
+.btn-outline {
+  @apply border border-neutral-300 bg-white text-neutral-800 hover:bg-neutral-50;
+}
+
+/* Foco padrão para botões em fundos escuros (gradientes) */
+.btn-on-dark {
+  @apply focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-700;
+}
+
+/* Links sobre fundo escuro */
+.link-on-dark {
+  @apply text-white underline decoration-white decoration-2 underline-offset-4 hover:text-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-700;
+}
+
+/* Escopo para fundos escuros: aplica ajustes de foco aos botões dentro do contêiner */
+.on-dark .btn:focus-visible {
+  --tw-ring-color: theme("colors.white");
+  --tw-ring-offset-color: theme("colors.primary.700");
+}
