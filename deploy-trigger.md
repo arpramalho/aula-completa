@@ -2,14 +2,18 @@
 
 Este arquivo é usado para forçar novos deploys no Vercel quando necessário.
 
-**Último deploy:** 2025-01-15 16:30:00
-**Commit:** Deploy com Node.js 20.x após mudança de versão
-**Objetivo:** Ativar domínios com versão estável do Node.js
+**Último deploy:** 2025-01-15 17:00:00
+**Commit:** Deploy de produção para ativar domínios
+**Objetivo:** Ativar os 3 domínios configurados no Vercel
 
-## Domínios Configurados
-- aulacompleta.app.br
-- www.aulacompleta.app.br  
-- aula-completa.vercel.app
+## Domínios Configurados ✅
+- www.aulacompleta.app.br ⏳ Aguardando deploy
+- aulacompleta.app.br ⏳ Aguardando deploy  
+- aula-completa.vercel.app ⏳ Aguardando deploy
+
+## Status dos Domínios
+Todos os domínios estão **properly configured** mas sem deployment de produção.
+Mensagem do Vercel: "To deploy to production, push to main"
 
 ## Variáveis de Ambiente Configuradas ✅
 - NEXT_PUBLIC_APP_URL
@@ -21,16 +25,15 @@ Este arquivo é usado para forçar novos deploys no Vercel quando necessário.
 - NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
 - STRIPE_SECRET_KEY
 
-## Mudanças Implementadas ✅
-- ✅ Versão do Node.js alterada de 22.x para 20.x no Vercel
+## Configurações Técnicas ✅
+- ✅ Node.js 20.x configurado no Vercel
 - ✅ Especificação de engines no package.json (>=20.0.0)
 - ✅ Correção da versão da API do Stripe (2023-10-16)
 - ✅ Build local funcionando perfeitamente
+- ✅ Integração Supabase-Vercel configurada
 
-## Status
-- ✅ Código enviado para GitHub
-- ✅ Deploy automático ativado no Vercel
-- ✅ Variáveis de ambiente configuradas
-- ✅ Node.js 20.x configurado no Vercel
-- 🔄 Triggering deploy com nova versão
+## Status do Deploy
+- ✅ Código pronto para produção
+- ✅ Todas as configurações OK
+- 🔄 Triggering production deploy
 - ⏳ Aguardando ativação dos domínios
