@@ -2,9 +2,9 @@
 
 Este arquivo é usado para forçar novos deploys no Vercel quando necessário.
 
-**Último deploy:** 2025-01-15 16:15:00
-**Commit:** Aplicando variáveis de ambiente configuradas
-**Objetivo:** Deploy com todas as variáveis de ambiente configuradas no Vercel
+**Último deploy:** 2025-01-15 16:30:00
+**Commit:** Deploy com Node.js 20.x após mudança de versão
+**Objetivo:** Ativar domínios com versão estável do Node.js
 
 ## Domínios Configurados
 - aulacompleta.app.br
@@ -21,9 +21,16 @@ Este arquivo é usado para forçar novos deploys no Vercel quando necessário.
 - NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
 - STRIPE_SECRET_KEY
 
+## Mudanças Implementadas ✅
+- ✅ Versão do Node.js alterada de 22.x para 20.x no Vercel
+- ✅ Especificação de engines no package.json (>=20.0.0)
+- ✅ Correção da versão da API do Stripe (2023-10-16)
+- ✅ Build local funcionando perfeitamente
+
 ## Status
 - ✅ Código enviado para GitHub
 - ✅ Deploy automático ativado no Vercel
 - ✅ Variáveis de ambiente configuradas
-- 🔄 Aplicando configurações com novo deploy
+- ✅ Node.js 20.x configurado no Vercel
+- 🔄 Triggering deploy com nova versão
 - ⏳ Aguardando ativação dos domínios
